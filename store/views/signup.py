@@ -2,13 +2,16 @@ from django.shortcuts import render , redirect
 from django.contrib.auth.hashers import make_password
 from store.models.customer import Customer
 from django.views import View
+from django.views.decorators.csrf import csrf_exempt
 
 
 #For Signup
 class Signup(View):
+    @csrf_exempt 
+
     def get(self , request):
         return render(request,'signup.html')
-
+    @csrf_exempt 
     def post(self , request):
         postData = request.POST
         first_name = postData.get('firstname')
@@ -47,7 +50,7 @@ class Signup(View):
 
             return render(request , 'signup.html', data)
 
-
+    @csrf_exempt 
     def validateCustomer(self , customer):
         error_message = None
         if(not customer.first_name):

@@ -5,12 +5,14 @@ from store.models.customer import Customer
 from django.views import View
 from store.models.product import Product
 from store.models.orders import Order
+from django.views.decorators.csrf import csrf_exempt
 
 
 
 
 #For Login
 class CheckOut(View):
+    @csrf_exempt
     def post(self , request):
      address = request.POST.get('address')
      phone = request.POST.get('phone')

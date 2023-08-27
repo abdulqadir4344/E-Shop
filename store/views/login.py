@@ -3,16 +3,22 @@ from django.contrib.auth.hashers import check_password
 from store.models.customer import Customer
 
 from django.views import View
+from django.views.decorators.csrf import csrf_exempt
 
 
 
 
 #For Login
+
+
 class Login(View):
     return_url = None
+    @csrf_exempt 
+
     def get(self , request):
         Login.return_url = request.GET.get('return_url')
         return render(request , 'login.html')
+    @csrf_exempt 
 
     def post(self , request):
         email = request.POST.get('email')
@@ -35,6 +41,7 @@ class Login(View):
         print(email , password)
         return render(request, 'login.html' , {'error': error_message}) 
 
+@csrf_exempt 
 
 def logout(request):
     request.session.clear()

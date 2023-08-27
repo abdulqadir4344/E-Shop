@@ -2,6 +2,7 @@ from django.shortcuts import render , redirect
 from store.models.product import Product
 from store.models.category import Category
 from django.views import View
+from django.views.decorators.csrf import csrf_exempt
 
 
 
@@ -10,7 +11,7 @@ from django.views import View
 
 
 class Index(View):
-
+    @csrf_exempt
     def post(self , request):
         product = request.POST.get('product')
         remove = request.POST.get('remove')
@@ -41,7 +42,7 @@ class Index(View):
 
 
 
-
+    @csrf_exempt
     def get(self , request):
         cart = request.session.get('cart')
         if not cart:

@@ -8,10 +8,14 @@ from store.models.orders import Order
 from store.middlewares.auth import auth_middleware
 
 
+from django.views.decorators.csrf import csrf_exempt
+
+
 
 
 #For Login
 class OrderView(View):
+    @csrf_exempt
 
     def get(self , request):
         customer = request.session.get('customer')
