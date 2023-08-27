@@ -12,6 +12,7 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <title>Welcome To E-Shop</title>
+    <link rel="Icon" href="{% static 'images\icon.png' %}">
 </head>
 
 <body>
@@ -19,7 +20,7 @@
     {% load static %}
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a  class="navbar-brand" href="/">
-            <img style = "height:40px"src="{% static 'E-Shop.png' %}" alt="E-Shop">
+            <img style = "height:40px"src="{% static 'images\E-Shop.png' %}" alt="E-Shop">
 
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -35,7 +36,7 @@
             {{customer}}
             <ul class=" navbar-nav my-2 my-lg-0">
                 <li class="nav-item pr-2 ">
-                    <a class="nav-link" href="/cart"> <img style = "height:30px;"src="{% static 'cart3.png' %}" alt="Cart"> 
+                    <a class="nav-link" href="/cart"> <img style = "height:30px;"src="{% static 'images\cart3.png' %}" alt="Cart"> 
                         <span class="badge badge-info ">{{request.session.cart.keys|length}}</span> <span class="sr-only ">(current)</span></a>
                     
 
@@ -86,153 +87,91 @@
 </body>
 
 <!-- footer -->
+{% load static %}
 
-{% comment %} <div class="container">
+<div class="footer pt-4">
+  <hr>
+  <link rel="stylesheet" href="{% static 'css\style.css'%}">
+  <footer class="footer-distributed">
 
-    <!-- Footer -->
-    <footer
-            class="text-center text-lg-start text-white"
-            style="background-color: #1c2331"
-            >
-      <!-- Section: Social media -->
-      <section
-               class="d-flex justify-content-between p-4"
-               style="background-color: #6351ce"
-               >
-        <!-- Left -->
-        <div class="me-5">
-          <span>Get connected with us on social networks:</span>
-        </div>
-        <!-- Left -->
-  
-        <!-- Right -->
-        <div>
-          <a href="" class="text-white me-4">
-            <i class="fab fa-facebook-f"></i>
+			<div class="footer-left">
+
+				<a href="{{homepage}}"><h3><span><img id = "logo" src="{% static 'images\E-Shop2.png' %}" alt="E-Shop"></span></h3></a>
+
+				<p class="footer-links">
+					<a href="{{homepage}}" class="link-1">Home</a>
+					
+				
+					<a href="{{login}}">Login</a>
+				
+					<a href="{{signup}}">About Us</a>
+					
+					
+					<a href="#">Contact Us</a>
+				</p>
+
+				<p class="footer-company-name">E-Shop © 2023</p>
+			</div>
+
+			<div class="footer-center">
+
+				<div>
+					<i class="fa fa-map-marker"></i>
+					<p><span>Street No.3</span> New Delhi, India</p>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<p>+91-123456789</p>
+				</div>
+
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p><a href="mailto:support@company.com">support@EShop.com</a></p>
+				</div>
+
+			</div>
+
+			<div class="footer-right">
+
+				<p class="footer-company-about">
+					<span>About the company</span>
+          <hr>
+					<b class = "text-white">Our E-Shop, Shopping website is a most user Friendly Website.100% Trusted Website, U Can Buy Anything From E-Shop.</b>
+				</p>
+
+				<!-- <div class="footer-icons"> -->
+
+         
+
+          <a href="https://www.linkedin.com/in/abdul-qadir-96305b230/">
+            <img src="{% static 'images\li.png'%}" alt="Fb" width="80" height="75">
           </a>
-          <a href="" class="text-white me-4">
-            <i class="fab fa-twitter"></i>
+          
+          <a style = "margin-right: 11px;"href="https://www.instagram.com/itz_abdul_qadir/">
+            <img src="{% static 'images\igpng.png'%}" alt="Fb" width="50" height="45">
           </a>
-          <a href="" class="text-white me-4">
-            <i class="fab fa-google"></i>
+
+          <a href="https://www.facebook.com/profile.php?id=61550252952888">
+            <img src="{% static 'images\fb3.png'%}" alt="Fb" width="75" height="45">
           </a>
-          <a href="" class="text-white me-4">
-            <i class="fab fa-instagram"></i>
+
+          <a href="https://github.com/abdulqadir4344">
+            <img src="{% static 'images\gh.png'%}" alt="Fb" width="50" height="45">
           </a>
-          <a href="" class="text-white me-4">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="" class="text-white me-4">
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
-        <!-- Right -->
-      </section>
-      <!-- Section: Social media -->
-  
-      <!-- Section: Links  -->
-      <section class="">
-        <div class="container text-center text-md-start mt-5">
-          <!-- Grid row -->
-          <div class="row mt-3">
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-              <!-- Content -->
-              <h6 class="text-uppercase fw-bold">E-Shop</h6>
-              <hr
-                  class="mb-4 mt-0 d-inline-block mx-auto"
-                  style="width: 60px; background-color: #7c4dff; height: 2px"
-                  />
-              <p>
-                Here you can use rows and columns to organize your footer
-                content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                elit.
-              </p>
-            </div>
-            <!-- Grid column -->
-  
-            <!-- Grid column -->
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-              <!-- Links -->
-              <h6 class="text-uppercase fw-bold">Products</h6>
-              <hr
-                  class="mb-4 mt-0 d-inline-block mx-auto"
-                  style="width: 60px; background-color: #7c4dff; height: 2px"
-                  />
-              <p>
-                <a href="#!" class="text-white">MDBootstrap</a>
-              </p>
-              <p>
-                <a href="#!" class="text-white">MDWordPress</a>
-              </p>
-              <p>
-                <a href="#!" class="text-white">BrandFlow</a>
-              </p>
-              <p>
-                <a href="#!" class="text-white">Bootstrap Angular</a>
-              </p>
-            </div>
-            <!-- Grid column -->
-  
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-              <!-- Links -->
-              <h6 class="text-uppercase fw-bold">Useful links</h6>
-              <hr
-                  class="mb-4 mt-0 d-inline-block mx-auto"
-                  style="width: 60px; background-color: #7c4dff; height: 2px"
-                  />
-              <p>
-                <a href="#!" class="text-white">Your Account</a>
-              </p>
-              <p>
-                <a href="#!" class="text-white">Become an Affiliate</a>
-              </p>
-              <p>
-                <a href="#!" class="text-white">Shipping Rates</a>
-              </p>
-              <p>
-                <a href="#!" class="text-white">Help</a>
-              </p>
-            </div>
-            <!-- Grid column -->
-  
-            <!-- Grid column -->
-            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-              <!-- Links -->
-              <h6 class="text-uppercase fw-bold">Contact</h6>
-              <hr
-                  class="mb-4 mt-0 d-inline-block mx-auto"
-                  style="width: 60px; background-color: #7c4dff; height: 2px"
-                  />
-              <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-              <p><i class="fas fa-envelope mr-3"></i> abdulqadir4344@gmail.com</p>
-              <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-              <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
-            </div>
-            <!-- Grid column -->
-          </div>
-          <!-- Grid row -->
-        </div>
-      </section>
-      <!-- Section: Links  -->
-  
-      <!-- Copyright -->
-      <div
-           class="text-center p-3"
-           style="background-color: rgba(0, 0, 0, 0.2)"
-           >
-        © 2020 Copyright:
-        <a class="text-white" href="https://mdbootstrap.com/"
-           >MDBootstrap.com</a
-          >
-      </div>
-      <!-- Copyright -->
-    </footer>
-    <!-- Footer -->
-  
-  </div>
-  <!-- End of .container -->
-   {% endcomment %}
+
+
+
+					<!-- <img id ="fbi" src="{% static 'images\fb.png'%}" alt="Fb"><a href="https://www.facebook.com/profile.php?id=61550252952888"></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+			    <img id = "lin"src="{% static 'images\li.png'%}" alt="Li"><a href="https://www.linkedin.com/in/abdul-qadir-96305b230/">
+					<a href="#"><i class="fa fa-github"></i></a> -->
+
+				<!-- </div> -->
+
+			</div>
+
+	</footer>
+</div>
 
 </html>
