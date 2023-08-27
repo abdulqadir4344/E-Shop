@@ -1,5 +1,7 @@
 from django.db import models
 from .category import Category
+from django.views.decorators.csrf import csrf_exempt
+
 
 class Product(models.Model):
     name = models.CharField(max_length=50)
@@ -10,15 +12,16 @@ class Product(models.Model):
 
 
     @staticmethod
+    @csrf_exempt
     def get_products_by_id(ids):
         return Product.objects.filter(id__in=ids)
 
-
+    @csrf_exempt
     @staticmethod
     def get_all_products():
         return Product.objects.all()
 
-
+    @csrf_exempt
     @staticmethod
     def get_all_products_by_categoryid(category_id):
         if category_id:

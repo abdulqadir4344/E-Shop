@@ -16,7 +16,6 @@ from django.views.decorators.csrf import csrf_exempt
 #For Login
 class OrderView(View):
     @csrf_exempt
-
     def get(self , request):
         customer = request.session.get('customer')
         orders = Order.get_orders_by_customer(customer)

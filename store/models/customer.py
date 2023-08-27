@@ -1,4 +1,5 @@
 from django.db import models
+from django.views.decorators.csrf import csrf_exempt
 
 class Customer(models.Model):
     first_name = models.CharField(max_length=50)
@@ -8,12 +9,12 @@ class Customer(models.Model):
     password = models.CharField(max_length=500)
 
 
-
-
+    @csrf_exempt
     def register(self):
         self.save()
 
     @staticmethod
+    @csrf_exempt
     def get_customer_by_email(email):
         try:
 
@@ -22,7 +23,7 @@ class Customer(models.Model):
             return False
 
 
-    
+    @csrf_exempt
     def isExists(self):
         if Customer.objects.filter(email = self.email):
             return True

@@ -14,12 +14,11 @@ from django.views.decorators.csrf import csrf_exempt
 class Login(View):
     return_url = None
     @csrf_exempt 
-
     def get(self , request):
         Login.return_url = request.GET.get('return_url')
         return render(request , 'login.html')
-    @csrf_exempt 
 
+    @csrf_exempt 
     def post(self , request):
         email = request.POST.get('email')
         password = request.POST.get('password')
@@ -42,7 +41,6 @@ class Login(View):
         return render(request, 'login.html' , {'error': error_message}) 
 
 @csrf_exempt 
-
 def logout(request):
     request.session.clear()
 
