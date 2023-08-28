@@ -25,6 +25,7 @@ def cart_quantity(product , cart):
     return 0;
 
 @register.filter(name='price_total')
+
 @csrf_exempt
 def price_total(product , cart):
     return product.price * cart_quantity(product , cart)

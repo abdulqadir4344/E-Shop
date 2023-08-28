@@ -1,12 +1,12 @@
 from django.contrib import admin
 from django.urls import path
 from . import views
-from .views.home import Index
-from .views.login import Login , logout
-from .views.signup import Signup
-from .views.cart import Cart
-from .views.checkout import CheckOut
-from .views.orders import OrderView
+from .views import Index
+from .views import Login , logout
+from .views import Signup
+from .views import Cart
+from .views import CheckOut
+from .views import OrderView
 from .middlewares.auth import auth_middleware
 
 

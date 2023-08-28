@@ -32,7 +32,7 @@
                     <div class="card-body">
                         <p class="card-title">{{product.name}}</p>
                         <p class="card-text"><b>{{product.price|currency}}</b></p>
-                        {% comment %} {{product | is_in_cart:request.session.cart }} {% endcomment %}
+                        {% comment %} {{product|is_in_cart:request.session.cart }} {% endcomment %}
                         
                         
                     </div>
