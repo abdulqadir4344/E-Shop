@@ -1,12 +1,17 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
+
 
 <div class="container">
     <div class="p-4 m-4">
         <div class=" col-lg-5 mx-auto border rounded pt-4">
-            <h3 class="alert alert-light border rounded">Create An Acount</h3>
+            <img id="signup" src="{% static 'images\cart6.png'%}" alt="Cart" >
+            <h5 class="alert alert-light border rounded">Create An Acount</h5>
+            
             <form action="/Signup" method="post">
+
                 {% csrf_token %}
 
                 {% if error %}

@@ -15,11 +15,9 @@ class Order(models.Model):
     status = models.BooleanField(default=False)
 
 
-    @csrf_exempt
     def placeOrder(self):
         self.save()
     
-    @csrf_exempt
     @staticmethod
     def get_orders_by_customer(customer_id):
         return Order.objects.filter(customer=customer_id).order_by("date" )
