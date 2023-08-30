@@ -53,6 +53,18 @@
             height: 80px;
             width: 100px;
         }
+        h5{
+            text-align: center;
+            font-size: 12px;
+        }
+        h6{
+            text-align: center;
+            font-size: 10px;
+        }
+
+        .social{
+            text-align:center;
+        }
 
         section {
             width: 100%;
@@ -225,6 +237,26 @@
             margin-bottom: 5px;
         }
 
+        @media only screen and (max-width:600px){
+            #cart{
+                flex-wrap:wrap;
+                padding-left:0px;
+                padding-right: 0px;
+            }
+            th{
+                white-space: normal;
+            }
+            #footer_order{
+                bottom:0;
+                text-align: center;
+
+            }
+            .social{
+                display:block;
+                text-align:center;
+            }
+        }
+
         /* If you don't want the footer to be responsive, remove these media queries */
 
         @media (max-width: 880px) {
@@ -324,94 +356,6 @@
 </body>
 
 <!-- footer -->
-{% load static %}
 
-<div class="footer pt-4">
-    <hr>
-    <link rel="stylesheet" href="{% static 'css\style.css'%}">
-    <footer class="footer-distributed">
-
-        <div class="footer-left">
-
-            <a href="{{homepage}}">
-                <h3><span><img id="logo" src="{% static 'images\E-Shop2.png' %}" alt="E-Shop"></span></h3>
-            </a>
-
-            <p class="footer-links">
-                <a href="{{homepage}}" class="link-1">Home</a>
-
-
-                <a href="{{login}}">Login</a>
-
-                <a href="{{signup}}">About Us</a>
-
-
-                <a href="#">Contact Us</a>
-            </p>
-
-            <p class="footer-company-name">E-Shop © 2023</p>
-        </div>
-
-        <div class="footer-center">
-
-            <div>
-                <i class="fa fa-map-marker"></i>
-                <p><span>Street No.3</span> New Delhi, India</p>
-            </div>
-
-            <div>
-                <i class="fa fa-phone"></i>
-                <p>+91-8923277463</p>
-            </div>
-
-            <div>
-                <i class="fa fa-envelope"></i>
-                <p><a href="mailto:support@company.com">abdulqadir4344@gmail.com</a></p>
-            </div>
-
-        </div>
-
-        <div class="footer-right">
-
-            <p class="footer-company-about">
-                <span>About the company</span>
-                <hr>
-                <b class="text-white">Our E-Shop, Shopping website is a most user Friendly Website.100% Trusted Website,
-                    U Can Buy Anything From E-Shop.</b>
-            </p>
-
-            <!-- <div class="footer-icons"> -->
-
-
-
-            <a href="https://www.linkedin.com/in/abdul-qadir-96305b230/">
-                <img src="{% static 'images\li.png'%}" alt="Linkedin" width="80" height="75">
-            </a>
-
-            <a style="margin-right: 11px;" href="https://www.instagram.com/itz_abdul_qadir/">
-                <img src="{% static 'images\igpng.png'%}" alt="Instagram" width="50" height="45">
-            </a>
-
-            <a href="https://www.facebook.com/profile.php?id=61550252952888">
-                <img src="{% static 'images\fb3.png'%}" alt="Facebook" width="75" height="45">
-            </a>
-
-            <a href="https://github.com/abdulqadir4344">
-                <img src="{% static 'images\gh.png'%}" alt="Github" width="50" height="45">
-            </a>
-
-
-
-            <!-- <img id ="fbi" src="{% static 'images\fb.png'%}" alt="Fb"><a href="https://www.facebook.com/profile.php?id=61550252952888"></a>
-					<a href="#"><i class="fa fa-twitter"></i></a>
-			    <img id = "lin"src="{% static 'images\li.png'%}" alt="Li"><a href="https://www.linkedin.com/in/abdul-qadir-96305b230/">
-					<a href="#"><i class="fa fa-github"></i></a> -->
-
-            <!-- </div> -->
-
-        </div>
-
-    </footer>
-</div>
 
 </html>

@@ -3,11 +3,10 @@
 {% block content %}
 {% load cart %}
 {% load custom_filter %}
+{% load static %}
 
-<div class="container">
-    <div class="border rounded p-4 m-4">
+<div id="cart" class="container">
         <p class="display-4 pl-4 ml-4">Your Cart</p>
-        <hr>
 
         <table class="table">
             <thead>
@@ -48,7 +47,6 @@
             <a href="#" data-toggle="modal" data-target="#exampleModal" class = "btn btn-outline-info border rounded col-lg-3 float-right">Check out</a>
         </div>
 
-    </div>
 </div>
 
   
@@ -85,5 +83,34 @@
       </div>
     </div>
   </div>
+
+  <footer>
+
+    <div id="footer_order" class="footer pt-4">
+  
+
+
+        <h5 >&copy;	Copyright Reserved Abdul Qadir - 2023</h5>
+    
+        <h6>Made by Abdul Qadir &hearts;	</h6>
+
+        <div class="social">
+
+        <a href="https://www.linkedin.com/in/abdul-qadir-96305b230/">
+            <img src="{% static 'images\li.png'%}" alt="Linkedin" width="70" height="65">
+        </a>
+
+        <a style="margin-right: 11px;" href="https://www.instagram.com/itz_abdul_qadir/">
+            <img src="{% static 'images\igpng.png'%}" alt="Instagram" width="42" height="40">
+        </a>
+        <a href="https://github.com/abdulqadir4344">
+            <img src="{% static 'images\gh.png'%}" alt="Github" width="47" height="42">
+        </a>
+        </div>
+
+    
+
+    </div>
+  </footer>
 
 {% endblock content %}
