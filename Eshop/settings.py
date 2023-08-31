@@ -29,6 +29,12 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 
+CSRF_TRUSTED_ORIGINS=['https://e-shopweb.up.railway.app/']
+
+
+CSRF_COOKIE_SECURE=False
+
+
 # Application definition
 
 INSTALLED_APPS = [
