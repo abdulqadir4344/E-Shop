@@ -8,6 +8,11 @@ class Customer(models.Model):
     email = models.EmailField()
     password = models.CharField(max_length=500)
 
+    def __str__(self):
+        return '%s %s' %(self.first_name,self.last_name)
+
+
+
 
     @csrf_exempt
     def register(self):

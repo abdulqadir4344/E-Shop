@@ -14,13 +14,35 @@ class Order(models.Model):
     date = models.DateField(default=datetime.datetime.today)
     status = models.BooleanField(default=False)
 
+    
+
+    def __str__(self):
+        return '%s %s %s %s %s %s %s %s' %(self.product.name,
+                                              self.date,
+                                              self.price,
+                                              self.price,
+                                              self.customer.first_name,
+                                              self.customer.last_name,
+                                              self.customer.email,
+                                              self.customer.phone)
+
 
     def placeOrder(self):
         self.save()
+
+    
+
     
     @staticmethod
     def get_orders_by_customer(customer_id):
         return Order.objects.filter(customer=customer_id).order_by("date" )
+
+    
+
+
+
+
+
 
 
 

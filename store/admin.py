@@ -12,6 +12,8 @@ class AdminProduct(admin.ModelAdmin):
 class AdminCategory(admin.ModelAdmin):
     list_display = ['name']   
 
+
+
 # Register your models here.
 
 admin.site.register(Product , AdminProduct)

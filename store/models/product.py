@@ -26,3 +26,6 @@ class Product(models.Model):
 
         else:
             return Product.get_all_products();
+
+
+    
