@@ -7,16 +7,59 @@
 {% load custom_filter %}
 {% load static %}
 
-<div id="category" class="container-fluid mt-4">
+<style>
+    /* Media query for smaller screens */
+    @media (max-width: 768px) {
+
+        /* Show the menu icon */
+        .list-group{
+            position: relative;
+            top: -17px;
+            display: block;
+        }
+
+        /* Hide regular navbar links */
+        #category a {
+            
+
+            display: none;
+        }
+
+        /* Show navbar links when menu is active */
+        #category.active a {
+
+            display: block;
+        }
+    }
+</style>
+
+
+
+
+<script>
+    // JavaScript to toggle the active class on the navbar
+    function toggleMenu() {
+        var navbar = document.querySelector('#category');
+        navbar.classList.toggle('active');
+        // if (menuBar.style.display === 'none') {
+        //     menuBar.style.display = 'block';
+        // } else {
+        //     menuBar.style.display = 'none';
+        // }
+    }
+</script>
+
+<div class="container-fluid mt-4">
     <div class="row">
 
         <!-- filter -->
-
-        <div class="col-lg-1.8 mx-auto">
-            <div class="list-group">
+        
+        <div id="category" class="col-lg-2">
+            <div class="list-group" onclick="toggleMenu()">&#9776;
                 <a href="/?category={{category.id}}" class="list-group-item list-group-item-action">All Products</a>
-                {% for category in categories  %}
-                <a href="/?category={{category.id}}" class="list-group-item list-group-item-action">{{category.name}}</a>
+                {% for category in categories %}
+                <a href="/?category={{category.id}}"
+                    class="list-group-item list-group-item-action">{{category.name}}</a>
                 {% endfor %}
             </div>
 
@@ -27,51 +70,51 @@
         <div id='products' class="col-lg-9 mx-auto">
             <div class="row mx-auto">
                 {% for product in products %}
-                <div class="card mx-auto mb-3" id = {{product.id}} style="width: 18rem;">
+                <div class="card mx-auto mb-3" id={{product.id}} style="width: 18rem;">
                     <img src="{{product.image.url}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <p class="card-title">{{product.name}}</p>
                         <p class="card-text"><b>{{product.price|currency}}</b></p>
                         {% comment %} {{product|is_in_cart:request.session.cart }} {% endcomment %}
-                        
-                        
+
+
                     </div>
                     <div class="card-footer p-0 no-gutters">
                         {% if product|is_in_cart:request.session.cart %}
                         <div class="row no-gutters">
-                           
-    
-                            <form action="/#{{product.id}}" method="post" class ="col-2">
+
+
+                            <form action="/#{{product.id}}" method="post" class="col-2">
                                 {% csrf_token %}
-                                <input hidden type="text" name = "product" value = '{{product.id}}'>
-                                <input hidden type="text" name = "remove" value = 'True'>
-                                <input type="submit" value = " - " class=" btn btn-block btn-secondary">
+                                <input hidden type="text" name="product" value='{{product.id}}'>
+                                <input hidden type="text" name="remove" value='True'>
+                                <input type="submit" value=" - " class=" btn btn-block btn-secondary">
                             </form>
                             <div class="text-center col">{{product|cart_quantity:request.session.cart}} in Cart</div>
-                            <form action="/#{{product.id}}" method="post" class ="col-2">
+                            <form action="/#{{product.id}}" method="post" class="col-2">
                                 {% csrf_token %}
-                                <input hidden type="text" name = "product" value = '{{product.id}}'>
-                                <input type="submit" value = " + " class=" btn btn-block btn-secondary">
+                                <input hidden type="text" name="product" value='{{product.id}}'>
+                                <input type="submit" value=" + " class=" btn btn-block btn-secondary">
                             </form>
-    
-    
+
+
                         </div>
                         {% else %}
-                        <form action="/#{{product.id}}" method = "POST" class = "btn-block">
+                        <form action="/#{{product.id}}" method="POST" class="btn-block">
                             {% csrf_token %}
-                            <input hidden type="text" name = "product" value = '{{product.id}}'>
-                            <input type = "submit" class="btn btn-light border form-control" value = "Add To Cart">
+                            <input hidden type="text" name="product" value='{{product.id}}'>
+                            <input type="submit" class="btn btn-light border form-control" value="Add To Cart">
                         </form>
                         {% endif %}
-    
-    
-                        
+
+
+
 
                     </div>
-                   
+
                 </div>
-        
-        
+
+
                 {% endfor %}
             </div>
         </div>
@@ -103,11 +146,12 @@
                 <a href="#">Contact Us</a>
             </p>
             <span>
-            <p class="footer-company-name">E-Shop © 2023</p></span><br>
-            
-            <p >&copy;	Copyright Reserved Abdul Qadir - 2023</p>
-    
-                    <p>Made by Abdul Qadir &hearts;	</p>
+                <p class="footer-company-name">E-Shop © 2023</p>
+            </span><br>
+
+            <p>&copy; Copyright Reserved Abdul Qadir - 2023</p>
+
+            <p>Made by Abdul Qadir &hearts; </p>
         </div>
 
         <div class="footer-center">
@@ -126,14 +170,14 @@
                 <i class="fa fa-envelope"></i>
                 <p><a href="mailto:support@company.com">abdulqadir4344@gmail.com</a></p>
 
-                
+
             </div>
 
 
-           
+
 
         </div>
-        
+
 
         <div class="footer-right">
 
@@ -180,9 +224,3 @@
 
 
 {% endblock content %}
-
-
-
-
-
-

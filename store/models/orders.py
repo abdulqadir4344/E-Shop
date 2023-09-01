@@ -17,14 +17,15 @@ class Order(models.Model):
     
 
     def __str__(self):
-        return '%s %s %s %s %s %s %s %s' %(self.product.name,
+        return '%s %s %s %s %s %s %s %s %s' %(self.product.name,
                                               self.date,
                                               self.price,
                                               self.price,
                                               self.customer.first_name,
                                               self.customer.last_name,
                                               self.customer.email,
-                                              self.customer.phone)
+                                              self.customer.phone,
+                                              self.product.image)
 
 
     def placeOrder(self):
