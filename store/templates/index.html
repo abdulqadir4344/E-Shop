@@ -8,12 +8,71 @@
 {% load static %}
 
 <style>
+    .list-group{
+        display: none;
+        padding: 5px;
+    }
+    #category a {
+        display: none;
+        text-decoration: none;
+    }
+
+    .hover-link {
+        padding-right: 15px;
+        font-size: 22px;
+        color: #ffffff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .hover-link:hover {
+        border: 1px solid white;
+        padding: 2px;
+        margin-right: 5px;
+        color: #ffffff;
+    }
+
+    a.hover-link {
+        text-decoration: none;
+    }
+
+
+
+    .container-category {
+        background-color: rgb(21, 17, 35);
+        padding: 8px;
+        
+    }
+
+    .allproducts {
+        height: 8px;
+    }
+
+    /* css for carousel second */
+
+    /* css end for carousel second */
 
     /* Media query for smaller screens */
     @media (max-width: 768px) {
 
+        #carouselExampleIndicators{
+            display: none;
+        }
+        .container-category {
+            background-color: #ffffff;
+        }
+
+        .container-category a {
+            display: none;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+
+
         /* Show the menu icon */
-        .list-group{
+        .list-group {
             position: relative;
             top: -17px;
             display: block;
@@ -21,7 +80,7 @@
 
         /* Hide regular navbar links */
         #category a {
-            
+
 
             display: none;
         }
@@ -31,6 +90,20 @@
 
             display: block;
         }
+
+        .carousel {
+            height: 100px;
+        }
+
+        .carousel-inner {
+            height: 236px;
+        }
+
+        #wholediv {
+            display: relative;
+            margin-top: 200px;
+        }
+
     }
 </style>
 
@@ -48,14 +121,99 @@
         //     menuBar.style.display = 'none';
         // }
     }
+
+
 </script>
 
-<div class="container-fluid mt-4">
+
+<div class="container-category">
+    <span class="allproducts">
+        <a href="/?category={{category.id}}" class="hover-link">All Products</a>
+    </span>
+    {% for category in categories %}
+    <span class="categorywise">
+        <a href="/?category={{category.id}}" class="hover-link">{{category.name}}</a></span>
+    {% endfor %}
+
+
+</div>
+
+<!-- for smaller screens navbar -->
+<div id="category" class="col-lg-2">
+    <div class="list-group" onclick="toggleMenu()">&#9776;
+        <a href="/?category={{category.id}}" class="list-group-item list-group-item-action">All Products</a>
+        {% for category in categories %}
+        <a href="/?category={{category.id}}" class="list-group-item list-group-item-action">{{category.name}}</a>
+        {% endfor %}
+    </div>
+
+</div>
+
+
+<!-- for smaller screens navbar end -->
+<!-- this is class for categories (if required after some changes) -->
+<!-- list-group-item list-group-item-action -->
+
+<!-- Carousel Added -->
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img style="width:15px; height:500px;" class="d-block w-100" src="{% static 'images\50off.png'%}"
+                alt="First slide">
+            <div class="carousel-caption d-none d-md-block">
+                <strong>Smart Watches</strong>
+                <b>
+                    <p>"Elevate your style with precision."</p>
+                </b>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img style="width:15px; height:500px;" class="d-block w-100" src="{% static 'images\phone.png' %}"
+                alt="Second slide">
+            <div style="color: black;" class="carousel-caption d-none d-md-block">
+                <strong>Smart Phones </strong>
+                <b>
+                    <p>"Seamless connectivity, boundless possibilities. Explore our latest phone collection."</p>
+                </b>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img style="width:15px; height:500px;" class="d-block w-100" src="{% static 'images\watch.png'%}"
+                alt="Third slide">
+            <div style="color: black;" class="carousel-caption d-none d-md-block">
+                <strong>Fashion</strong>
+                <b>
+                    <p>"Chase trends, embrace classics. Find your perfect fashion statement here."</p>
+                </b>
+            </div>
+        </div>
+    </div>
+
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<!-- Carousel Closed -->
+
+
+<div id="wholediv" class="container-fluid mt-4">
     <div class="row">
 
         <!-- filter -->
-        
-        <div id="category" class="col-lg-2">
+
+        <!-- <div id="category" class="col-lg-2">
             <div class="list-group" onclick="toggleMenu()">&#9776;
                 <a href="/?category={{category.id}}" class="list-group-item list-group-item-action">All Products</a>
                 {% for category in categories %}
@@ -64,51 +222,21 @@
                 {% endfor %}
             </div>
 
-        </div>
+        </div> -->
 
-        <!-- Carousel Added -->
 
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img style = "width:15px; height:500px;"class="d-block w-100" src="{% static 'images\carousel1.jpg'%}" alt="First slide">
-                <div class="carousel-caption d-none d-md-block">
-                    <strong>Smart Watches</strong>
-                    <b><p>"Elevate your style with precision."</p></b>
-                  </div>
-              </div>
-              <div class="carousel-item">
-                <img style = "width:15px; height:500px;" class="d-block w-100" src="{% static 'images\carousel2.jpg'%}" alt="Second slide">
-                <div style="color: black;" class="carousel-caption d-none d-md-block">
-                    <strong>Smart Phones </strong>
-                    <b><p >"Seamless connectivity, boundless possibilities. Explore our latest phone collection."</p></b>
-                  </div>
-              </div>
-              <div class="carousel-item">
-                <img style = "width:15px; height:500px;"class="d-block w-100" src="{% static 'images\carousel3.jpg'%}" alt="Third slide">
-                <div style="color: black;" class="carousel-caption d-none d-md-block">
-                    <strong>Fashion</strong>
-                    <b><p>"Chase trends, embrace classics. Find your perfect fashion statement here."</p></b>
-                  </div>
-              </div>
-            </div>
-       
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
 
-          <!-- Carousel Closed -->
+
+
+
+
+
+
+
+
+
+
+
 
 
         <!-- all products -->
