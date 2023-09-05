@@ -8,10 +8,21 @@
 {% load static %}
 
 <style>
-    .list-group{
+    .carousel-inner {
+        height: 500px;
+    }
+
+    .carousel-indicators li {
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+    }
+
+    .list-group {
         display: none;
         padding: 5px;
     }
+
     #category a {
         display: none;
         text-decoration: none;
@@ -41,11 +52,18 @@
     .container-category {
         background-color: rgb(21, 17, 35);
         padding: 8px;
-        
+
     }
 
     .allproducts {
         height: 8px;
+    }
+
+    @media (max-width: 600px) {
+        .carousel-inner {
+            height: auto;
+        }
+
     }
 
     /* css for carousel second */
@@ -55,10 +73,15 @@
     /* Media query for smaller screens */
     @media (max-width: 768px) {
 
-        #carouselExampleIndicators{
-            display: none;
+        .carousel-inner {
+            height: auto;
         }
+        .nav-item{
+            text-align: center;
+        }
+
         .container-category {
+            display: none;
             background-color: #ffffff;
         }
 
@@ -74,7 +97,6 @@
         /* Show the menu icon */
         .list-group {
             position: relative;
-            top: -17px;
             display: block;
         }
 
@@ -89,14 +111,6 @@
         #category.active a {
 
             display: block;
-        }
-
-        .carousel {
-            height: 100px;
-        }
-
-        .carousel-inner {
-            height: 236px;
         }
 
         #wholediv {
@@ -138,6 +152,12 @@
 
 </div>
 
+
+
+
+
+
+
 <!-- for smaller screens navbar -->
 <div id="category" class="col-lg-2">
     <div class="list-group" onclick="toggleMenu()">&#9776;
@@ -156,7 +176,7 @@
 
 <!-- Carousel Added -->
 
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2000">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -164,8 +184,7 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img style="width:15px; height:500px;" class="d-block w-100" src="{% static 'images\50off.png'%}"
-                alt="First slide">
+            <img class="d-block w-100" src="{% static 'images\50off.png'%}" alt="First slide">
             <div class="carousel-caption d-none d-md-block">
                 <strong>Smart Watches</strong>
                 <b>
@@ -174,8 +193,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img style="width:15px; height:500px;" class="d-block w-100" src="{% static 'images\phone.png' %}"
-                alt="Second slide">
+            <img class="d-block w-100" src="{% static 'images\phone.png' %}" alt="Second slide">
             <div style="color: black;" class="carousel-caption d-none d-md-block">
                 <strong>Smart Phones </strong>
                 <b>
@@ -184,8 +202,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <img style="width:15px; height:500px;" class="d-block w-100" src="{% static 'images\watch.png'%}"
-                alt="Third slide">
+            <img class="d-block w-100" src="{% static 'images\watch.png'%}" alt="Third slide">
             <div style="color: black;" class="carousel-caption d-none d-md-block">
                 <strong>Fashion</strong>
                 <b>
@@ -204,7 +221,6 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-
 <!-- Carousel Closed -->
 
 
@@ -293,6 +309,10 @@
         </div>
     </div>
 </div>
+
+
+
+
 
 {% load static %}
 

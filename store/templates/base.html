@@ -6,15 +6,16 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="e" type="image" href="{% static 'static\images\icon2.png' %}">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    
+
 
     <title>Welcome To E-Shop</title>
-    <link rel="e" href="{% static 'images\icon2.png' %}" type="image/x-icon">
+
 
     <style>
         @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
@@ -23,14 +24,21 @@
             font-family: Open Sans;
         }
 
-        
+        .navbar-hide {
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+
+
 
         #logo {
             height: 80px;
             width: 170px;
 
         }
-        #login{
+
+        #login {
             display: grid;
             place-items: center;
             height: 20vh;
@@ -38,7 +46,7 @@
             max-height: 100%;
         }
 
-        #signup{
+        #signup {
             display: grid;
             place-items: center;
             height: 25vh;
@@ -55,17 +63,19 @@
             height: 80px;
             width: 100px;
         }
-        h5{
+
+        h5 {
             text-align: center;
             font-size: 12px;
         }
-        h6{
+
+        h6 {
             text-align: center;
             font-size: 10px;
         }
 
-        .social{
-            text-align:center;
+        .social {
+            text-align: center;
         }
 
         section {
@@ -239,34 +249,49 @@
             margin-bottom: 5px;
         }
 
-        @media only screen and (max-width:600px){
-            #cart{
-                flex-wrap:wrap;
-                padding-left:0px;
+        @media only screen and (max-width:600px) {
+            #cart {
+                flex-wrap: wrap;
+                padding-left: 0px;
                 padding-right: 0px;
             }
-            th{
+
+            .navbar-hide {
+                transform: translateY(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            th {
                 white-space: normal;
             }
-            #footer_order{
-                bottom:0;
+
+            #footer_order {
+                bottom: 0;
                 text-align: center;
 
             }
-            .social{
-                display:block;
-                text-align:center;
+
+            .nav-item {
+                text-align: center;
             }
-          
-            .navbar ul{
+
+            .social {
+                display: block;
+                text-align: center;
+            }
+
+            .navbar ul {
                 display: flex;
                 justify-content: center;
             }
-            .navbar li{
+
+            .navbar li {
                 display: flex;
                 justify-content: center;
             }
-          
+
+
+
         }
 
         /* If you don't want the footer to be responsive, remove these media queries */
@@ -343,6 +368,10 @@
 
         </div>
     </nav>
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+
 
 
 
