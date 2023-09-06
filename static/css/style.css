@@ -349,6 +349,7 @@ a.hover-link {
 
 
 .container-category {
+    margin-top: 75px;
 
     background-color: rgb(21, 17, 35);
     padding: 8px;
@@ -372,6 +373,9 @@ a.hover-link {
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
+    .carousel{
+        margin-top: 65px;
+    }
 
     .carousel-inner {
         height: auto;
@@ -397,6 +401,8 @@ a.hover-link {
 
     /* Show the menu icon */
     .list-group {
+        top: 65px;
+        margin-bottom: 45px;
         position: relative;
         display: block;
     }
