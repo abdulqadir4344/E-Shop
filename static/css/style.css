@@ -373,9 +373,7 @@ a.hover-link {
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
-    .carousel{
-        margin-top: 65px;
-    }
+   
 
     .carousel-inner {
         height: auto;
@@ -386,44 +384,23 @@ a.hover-link {
     }
 
     .container-category {
-        display: none;
-        background-color: #ffffff;
+        width: 100%;
+        overflow-x: auto;
+        /* Enable horizontal scrolling for small screens */
+        white-space: nowrap;
+        
+    }
+    .hover-link{
+        font-size: 15px;
     }
 
-    .container-category a {
-        display: none;
-        background-color: #ffffff;
-        margin: 0;
-        padding: 0;
+}
+
+@media (max-width:1000px) {
+    .container-category {
+        width: 100%;
+        overflow-x: auto;
+        /* Enable horizontal scrolling for small screens */
+        white-space: nowrap;
     }
-
-
-
-    /* Show the menu icon */
-    .list-group {
-        top: 65px;
-        margin-bottom: 45px;
-        position: relative;
-        display: block;
-    }
-
-    /* Hide regular navbar links */
-    #category a {
-
-
-        display: none;
-    }
-
-    /* Show navbar links when menu is active */
-    #category.active a {
-
-        display: block;
-    }
-
-    #wholediv {
-        display: relative;
-        margin-top: 200px;
-    }
-
-
 }
