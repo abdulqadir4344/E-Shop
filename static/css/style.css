@@ -4,6 +4,40 @@
     font-family: Open Sans;
 }
 
+#profileLogo{
+    height: 30px;
+    width: 30px;
+    top: 10px !important;
+
+}
+#dropdownmenushow {
+    margin-left: -35px;
+   
+}
+#logoutlogo{
+    height: 20px;
+    width: 15px;
+
+}
+
+#password{
+    display: flex;
+}
+
+
+#Showpassword{
+    margin: 0;
+    padding: 0;
+    font-size: small;
+}
+#checkbox{
+    margin-left: 5px;
+    margin-top: 5px !important;
+    margin-right: 5px;
+    padding-top: 0;
+}
+
+
 .navbar-hide {
     transform: translateY(-100%);
     transition: transform 0.3s ease;
@@ -11,6 +45,10 @@
 
 .navbar {
     padding-bottom: 0;
+    
+}
+.sidebar #sidebar{
+    margin-top: 75px;
 }
 
 
@@ -23,19 +61,22 @@
 }
 
 #login {
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 18vh;
-    max-width: 100%;
-    max-height: 100%;
+    margin-left: 38px;
+    
+
 }
 
 #signup {
-    display: grid;
-    place-items: center;
-    height: 25vh;
-    max-width: 100%;
-    max-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 28vh;
+    
+    margin-left: 60px;
 }
 
 #lin {
@@ -239,6 +280,24 @@ section {
         padding-left: 0px;
         padding-right: 0px;
     }
+    .navbar #dropdownmenushow {
+        overflow: hidden;
+        background-color: transparent;
+        margin: 0;
+       
+    }
+    .navbar #dropdownmenushow{
+        background-color: transparent !important;
+        background: transparent !important; /* Set the background to transparent */
+        border: none; /* Remove borders */
+        box-shadow: none;
+        flex-wrap: wrap;
+    }
+    #dropdown{
+        background: transparent;
+        justify-content: left;
+    }
+
 
     .navbar-hide {
         transform: translateY(-100%);
@@ -277,14 +336,34 @@ section {
     .navbar {
         padding-left: 8px;
         padding-bottom: 0;
+        
     }
+    #signup {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 18vh;
+        
+        margin-left: 60px;
+    }
+    #login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 18vh;
+        margin-left: 12px;
+        
+    
+    }
+    
+
+    
 
 
 
 }
 
 /* If you don't want the footer to be responsive, remove these media queries */
-
 @media (max-width: 880px) {
 
     .footer-distributed {
@@ -303,8 +382,18 @@ section {
     .footer-distributed .footer-center i {
         margin-left: 0;
     }
+    #signup {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 28vh;
+        
+        margin-left: 39px;
+    }
+   
 
 }
+
 
 /* index.html css start */
 
@@ -328,6 +417,7 @@ section {
 }
 
 .hover-link {
+    
     padding-right: 15px;
     font-size: 22px;
     color: #ffffff;
@@ -348,9 +438,9 @@ a.hover-link {
 
 
 
-.container-category {
-    margin-top: 75px;
+.container-category { 
 
+    margin-top: 69px;
     background-color: rgb(21, 17, 35);
     padding: 8px;
 
@@ -359,6 +449,7 @@ a.hover-link {
 .allproducts {
     height: 8px;
 }
+
 
 @media (max-width: 600px) {
     .carousel-inner {
@@ -373,7 +464,7 @@ a.hover-link {
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
-   
+
 
     .carousel-inner {
         height: auto;
@@ -388,9 +479,10 @@ a.hover-link {
         overflow-x: auto;
         /* Enable horizontal scrolling for small screens */
         white-space: nowrap;
-        
+
     }
-    .hover-link{
+
+    .hover-link {
         font-size: 15px;
     }
 
@@ -404,3 +496,13 @@ a.hover-link {
         white-space: nowrap;
     }
 }
+
+
+
+
+/* css for sidebar */
+
+
+/* css end for sidebar */
+
+

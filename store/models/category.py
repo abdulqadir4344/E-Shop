@@ -16,4 +16,8 @@ class Category(models.Model):
         return self.name
 
 
+
+
+# added by me after changes 
+
     

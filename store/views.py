@@ -185,6 +185,7 @@ def login(request):
         else:
             error_message = 'Email or Password invalid !!'
         print(email , password)
+        print('you are : ' , request.session.get('email'))
         return render(request, 'login.html' , {'error': error_message}) 
 
     else:
@@ -299,3 +300,8 @@ def Cart(request):
         products = Product.get_products_by_id(ids)
         print(products)
         return render(request , 'cart.html' , {'products': products})
+    
+
+def profile(request):
+
+    return render(request , 'profile.html')

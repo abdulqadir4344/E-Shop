@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% block title %}E-Shop Login{% endblock title %}
 {% load static %}
 
 {% block content %}
@@ -27,18 +28,42 @@
                 <!-- password -->
                 <div class="form-group">
                     <label for="">Password</label>
-                    <input type="password" name="password" id="" class="form-control form-control-sm" placeholder="******">
+                    <input id="password" type="password" name="password" id="" class="form-control form-control-sm" placeholder="******" >
+                    <span><input id="checkbox" type="checkbox"></span><span id ="Showpassword">Show Password</span>
+                    
                 </div>
 
                 <div class="form-group">
                     <input class = "btn btn-sm btn-info col-lg-4"type="submit" value="Login">
+                    
                 </div>
+                
 
                 
             </form>
         </div>
     </div>
 </div>
+
+<script>
+    let password = document.getElementById('password');
+    let checkbox = document.getElementById('checkbox');
+
+    checkbox.onclick = function(){
+        if (checkbox.checked){
+            password.type ='text';
+
+
+        }else{
+            password.type = 'password';
+        }
+
+    }
+</script>
+
+
+      
+
 
 
 {% endblock content %}

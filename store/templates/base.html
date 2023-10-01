@@ -6,21 +6,28 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="e" type="image" href="{% static 'static\images\icon2.png' %}">
+    <link rel="shortcut icon" href="{% static 'images/icon.png'%}" type="">
+    <title>{% block title %}{% endblock title %}</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+    
+        <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    
+    
+    
 
-
-    <title>Welcome To E-Shop</title>
     <link rel="stylesheet" href="{% static 'css\style.css'%}">
+
+
 
 
 </head>
 
 <body>
+
     <!-- navbar -->
     {% load static %}
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -34,8 +41,8 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
 
+            <ul class="navbar-nav mr-auto">
 
             </ul>
             {{customer}}
@@ -49,12 +56,32 @@
 
                 </li>
                 {% if request.session.customer %}
+
+                <!-- <li class="nav-item ">
+                    <a class="nav-link" href="/logout"><b>Logout</b> <span class="sr-only">(current)</span></a>
+                </li> -->
+                <!-- <li class="nav-item ">
+                    <a class="nav-link" href="/profile"><b></b> <span class="sr-only">(current)</span>
+                    <img id="profileLogo" src="{% static "images\profile-logo.png" %}"></a>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link" href="/orders"><b> Orders</b> <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="/logout"><b>Logout</b> <span class="sr-only">(current)</span></a>
+                <li id="dropdown" class="nav-item dropdown mr-2">
+
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img id="profileLogo" src="{%static 'images\profile-logo.png'%}">
+
+                    </a>
+                    <div id="dropdownmenushow" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="nav-link" href="/profile"><b>Profile</b> <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/logout"><b>Logout</b> <span class="sr-only">(current)</span>
+                            <img id="logoutlogo" src="{% static 'images\logout-logo.png'%}">
+                        </a>
+                    </div>
                 </li>
+
                 {% else %}
 
                 <li class="nav-item">
@@ -80,9 +107,12 @@
     <!-- body -->
 
 
-    {% block content %}{% endblock content %}
+{% block content %}{% endblock content %}
 
 
+
+
+    <script src="{% static 'js/script.js' %}"></script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -5,9 +5,11 @@ from .views import index
 from .views import login , logout
 from .views import signup
 from .views import Cart
+from .views import profile
 from .views import checkout
 from .views import OrderView
 from .middlewares.auth import auth_middleware
+
 
 
 
@@ -23,5 +25,6 @@ urlpatterns = [
     path('cart',Cart , name='cart'),
     path('check-out',checkout, name='checkout'),
     path('orders',auth_middleware(OrderView) , name='orders'),
+    path('profile',profile, name='profile'),
 
 ]
