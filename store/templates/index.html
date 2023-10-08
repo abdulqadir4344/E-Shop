@@ -9,7 +9,6 @@
 {% load static %}
 
 
-
 <script>
     // JavaScript to toggle the active class on the navbar
     function toggleMenu() {
@@ -31,13 +30,31 @@
     <span class="allproducts">
         <a href="/?category={{category.id}}" class="hover-link">All Products</a>
     </span>
+    
     {% for category in categories %}
     <span class="categorywise">
         <a href="/?category={{category.id}}" class="hover-link">{{category.name}}</a></span>
     {% endfor %}
 
 
+
 </div>
+<!-- <div class="container-category">
+    <span class="allproducts">
+        <img style="height:60px; width:50px;"src="{% static 'images/1-1.png' %}">
+    </span>
+    
+    {% for category in categories %}
+    <span class="categorywise">
+        <a href="/?category={{category.id}}"class="hover-link">
+            <img style="height:60px; width:50px;" src="{% static 'images/' %}{{ image_url }}">
+        </a>
+    </span>
+{% endfor %}
+
+
+
+</div> -->
 
 
 
@@ -103,6 +120,7 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
+<div><h1>Welcome, {{ request.user.username }}!</h1></div>
 <!-- Carousel Closed -->
 
 <div id="wholediv" class="container-fluid mt-4">

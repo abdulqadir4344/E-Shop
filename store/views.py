@@ -3,11 +3,14 @@ from django.contrib.auth.hashers import make_password
 from .models.customer import Customer
 from django.views import View
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth import authenticate, login
 
 
 @csrf_exempt
 def index(request):
-    
+    image_urls = ["1-2.png", "1-3.png", "1-4.png", "1-5.png", "1-6.png", "1-7.png", "1-8.png", "1-9.png", "1-10.png"]
+    context = {'image_urls': image_urls}
+    print('you are : ' , request.session.get('email'))
     if request.method =="POST":
         product = request.POST.get('product')
         remove = request.POST.get('remove')
@@ -55,8 +58,9 @@ def index(request):
         data = {}
         data['products'] = products
         data['categories'] = categories
+        data['image_urls'] = image_urls
         print('you are : ' , request.session.get('email'))
-        return render(request,'index.html', data)
+        return render(request,'index.html',data)
 
 
 
@@ -148,7 +152,7 @@ def signup( request):
     
 
 
-from django.shortcuts import render , redirect ,  HttpResponseRedirect
+from django.shortcuts import render , redirect ,  HttpResponseRedirect , get_object_or_404
 from django.contrib.auth.hashers import check_password
 from store.models.customer import Customer
 
@@ -169,7 +173,12 @@ def login(request):
     if request.method == "POST":
         email = request.POST.get('email')
         password = request.POST.get('password')
+        user = authenticate(request, username=email, password=password)
+        if user is not None:
+            login(request, user)
+            request.session['user_id'] = user.id
         customer = Customer.get_customer_by_email(email)
+        print(customer)
         error_message = None
         if customer:
             flag = check_password(password, customer.password)
@@ -301,7 +310,19 @@ def Cart(request):
         print(products)
         return render(request , 'cart.html' , {'products': products})
     
+from store.models.customer import Customer
+from django.contrib.auth.models import User
 
 def profile(request):
+    user_id = request.session.get('user_id')
+
+    if user_id:
+  
+        user = get_object_or_404(User, id=user_id)
+
+        email = user.email
+
+        return render(request , 'profile.html',{'email':email})
+    
 
     return render(request , 'profile.html')

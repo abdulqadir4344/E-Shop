@@ -3,11 +3,12 @@
 {% load static %}
 
 {% block content %}
-
 <div class="container">
     <div class="p-4 m-4">
         <div class=" col-lg-4 mt-4 mb-4 mx-auto border rounded pt-4">
+            <div style="display: flex; justify-content: center; align-items: center;">
             <img id="login" src="{% static 'images\login2.png'%}" alt="Login Here" >
+            </div>
             <h5 class="alert alert-light border rounded mt-3 mb-3">Login Here</h5>
             <form action="/login" method="post">
                 {% csrf_token %}
@@ -48,14 +49,17 @@
 <script>
     let password = document.getElementById('password');
     let checkbox = document.getElementById('checkbox');
+    const spanElement = document.getElementById('Showpassword');
 
     checkbox.onclick = function(){
         if (checkbox.checked){
             password.type ='text';
+            spanElement.textContent = 'Hide Password';
 
 
         }else{
             password.type = 'password';
+            spanElement.textContent = 'Show Password';
         }
 
     }

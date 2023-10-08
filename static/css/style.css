@@ -19,6 +19,21 @@
     width: 15px;
 
 }
+#order{
+    margin-top: 90px;
+    width: 100%;
+    overflow-x: auto;
+    /* Enable horizontal scrolling for small screens */
+    white-space: nowrap;
+}
+#cart{
+    margin-top: 90px;
+    width: 100%;
+    overflow-x: auto;
+    /* Enable horizontal scrolling for small screens */
+    white-space: nowrap;
+
+}
 
 #password{
     display: flex;
@@ -60,24 +75,8 @@
 
 }
 
-#login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 18vh;
-    margin-left: 38px;
-    
 
-}
 
-#signup {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 28vh;
-    
-    margin-left: 60px;
-}
 
 #lin {
     height: 80px;
@@ -274,12 +273,30 @@ section {
     margin-bottom: 5px;
 }
 
-@media only screen and (max-width:600px) {
-    #cart {
-        flex-wrap: wrap;
-        padding-left: 0px;
-        padding-right: 0px;
+@media (max-width: 880px) {
+
+    .footer-distributed {
+        font: bold 14px sans-serif;
     }
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right {
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .footer-distributed .footer-center i {
+        margin-left: 0;
+    }
+   
+
+}
+
+@media only screen and (max-width:600px) {
+
     .navbar #dropdownmenushow {
         overflow: hidden;
         background-color: transparent;
@@ -338,23 +355,7 @@ section {
         padding-bottom: 0;
         
     }
-    #signup {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 18vh;
-        
-        margin-left: 60px;
-    }
-    #login {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 18vh;
-        margin-left: 12px;
-        
-    
-    }
+
     
 
     
@@ -364,35 +365,7 @@ section {
 }
 
 /* If you don't want the footer to be responsive, remove these media queries */
-@media (max-width: 880px) {
 
-    .footer-distributed {
-        font: bold 14px sans-serif;
-    }
-
-    .footer-distributed .footer-left,
-    .footer-distributed .footer-center,
-    .footer-distributed .footer-right {
-        display: block;
-        width: 100%;
-        margin-bottom: 40px;
-        text-align: center;
-    }
-
-    .footer-distributed .footer-center i {
-        margin-left: 0;
-    }
-    #signup {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 28vh;
-        
-        margin-left: 39px;
-    }
-   
-
-}
 
 
 /* index.html css start */
@@ -441,7 +414,7 @@ a.hover-link {
 .container-category { 
 
     margin-top: 69px;
-    background-color: rgb(21, 17, 35);
+    background-color: rgb(21, 17, 35); 
     padding: 8px;
 
 }
