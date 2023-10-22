@@ -331,7 +331,7 @@ section {
     }
 
     .card{
-        flex: 0 0 calc(33.33% - 10px);
+        flex: 0 0 calc(50% - 10px);
     }
 
 
