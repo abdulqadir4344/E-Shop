@@ -4,6 +4,21 @@
     font-family: Open Sans;
 }
 
+#products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+
+}
+.card{
+    flex: 0 0 calc(20% - 10px);
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+
+
 #profileLogo{
     height: 30px;
     width: 30px;
@@ -314,6 +329,19 @@ section {
         background: transparent;
         justify-content: left;
     }
+
+    .card{
+        flex: 0 0 calc(33.33% - 10px);
+    }
+
+
+
+
+
+
+
+
+
 
 
     .navbar-hide {
