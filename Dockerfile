@@ -14,4 +14,4 @@ RUN pip install -r requirements.txt
 
 COPY . /app
 
-ENTRYPOINT [ "gunicorn", "E-Shop.wsgi"]
+ENTRYPOINT [ "gunicorn", "Eshop.wsgi"]
