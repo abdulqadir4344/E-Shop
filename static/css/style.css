@@ -75,6 +75,7 @@
 
 .navbar {
     padding-bottom: 0;
+    top:fixed;
     
 }
 .sidebar #sidebar{
