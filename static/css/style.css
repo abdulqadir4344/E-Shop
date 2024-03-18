@@ -75,7 +75,8 @@
 
 .navbar {
     padding-bottom: 0;
-    top:fixed;
+    Position:Sticky;
+    top:0;
     
 }
 .sidebar #sidebar{
