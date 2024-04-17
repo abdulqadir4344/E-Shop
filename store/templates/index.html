@@ -23,20 +23,23 @@
 
 
 </script>
-
-<div class="container-category">
-    <span class="allproducts">
-        <a href="/?category={{category.id}}" class="hover-link">All Products</a>
-    </span>
+<div id="containercategory">
+    <div  class="container-category">
+        <span class="allproducts">
+            <a href="/?category={{category.id}}" class="hover-link">All Products</a>
+        </span>
+        
+        {% for category in categories %}
+        <span class="categorywise">
+            <a href="/?category={{category.id}}" class="hover-link">{{category.name}}</a></span>
+        {% endfor %}
     
-    {% for category in categories %}
-    <span class="categorywise">
-        <a href="/?category={{category.id}}" class="hover-link">{{category.name}}</a></span>
-    {% endfor %}
-
-
-
+    
+    
+    </div>
 </div>
+
+
 
 
 <!-- <div class="container-category">

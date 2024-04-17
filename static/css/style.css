@@ -11,6 +11,10 @@
 
 
 }
+#containercategory{
+    position: fixed;
+    z-index: 5;
+}
 .card-img-top{
      overflow: hidden;
      position: relative;
@@ -355,10 +359,10 @@ section {
 
 
 
-    .navbar-hide {
+    /* .navbar-hide {
         transform: translateY(-100%);
         transition: transform 0.3s ease;
-    }
+    } */
 
     th {
         white-space: normal;
@@ -392,6 +396,7 @@ section {
     .navbar {
         padding-left: 8px;
         padding-bottom: 0;
+        position: sticky;
         
     }
 
@@ -441,11 +446,7 @@ section {
     border: 1px solid rgb(255, 255, 255);
     padding: 2px;
     margin-right: 5px;
-<<<<<<< HEAD
-    color: #1aff00;
-=======
     color: #00ff00;
->>>>>>> c5be942e55ac374b9547ad6a2e9668852c19cfcc
 }
 
 a.hover-link {
@@ -455,7 +456,7 @@ a.hover-link {
 
 
 .container-category { 
-    margin-top: 69px;
+    /* margin-top: 69px; */
     background-color: rgb(21, 17, 35); 
     padding: 8px;
     /* position: fixed;
