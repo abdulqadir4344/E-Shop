@@ -14,7 +14,15 @@ window.addEventListener("scroll", () => {
   lastScrollTop = currentScrollTop;
 });
 
-
+$(document).ready(function() {
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 100) { // Adjust as needed based on when you want the navbar to be fixed
+      $('#navbar').addClass('navbar-scroll');
+    } else {
+      $('#navbar').removeClass('navbar-scroll');
+    }
+  });
+});
 
 // js for sidebar
 
