@@ -84,6 +84,8 @@
 
 .navbar {
     padding-bottom: 0;
+    Position:Sticky;
+    top:0;
     
 }
 .sidebar #sidebar{
@@ -439,7 +441,11 @@ section {
     border: 1px solid rgb(255, 255, 255);
     padding: 2px;
     margin-right: 5px;
+<<<<<<< HEAD
     color: #1aff00;
+=======
+    color: #00ff00;
+>>>>>>> c5be942e55ac374b9547ad6a2e9668852c19cfcc
 }
 
 a.hover-link {
